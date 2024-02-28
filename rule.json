@@ -1,0 +1,17 @@
+[
+    {
+        "priority": 1,
+        "action": {
+            "type": "redirect",
+            "redirect": {
+                "url": "https://snoworange420.github.io/assets/bob.png"
+            }
+        },
+        "condition": {
+            "urlFilter": "https://accounts.magister.net/images/login_1.webp",
+            "resourceTypes": [
+                "main_frame"
+            ]
+        }
+    }
+]
