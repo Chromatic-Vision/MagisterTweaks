@@ -1,7 +1,11 @@
 //v1.3
 
-const username = null;
-const password = null;
+const username = "n401696";
+const password = "696969";
+
+chrome.storage.sync.get('mytext', function(data) {
+  console.log(data.mytext);
+});
 
 function check() {
 
@@ -42,7 +46,12 @@ function login() {
     background-color: #333333;
   }
 
+  .bg1_webp, .bg2_webp, .bg3_webp, .bg4_webp, .bg5_webp, .bg6_webp, .bg7_webp {
+    background-image: url(https://snoworange420.github.io/assets/bob.png); !important
+  }
+
   `)
+
 
   // searchAndGetElementsByClassName("splash-container", (elements) => {
   //   element = elements[0];
@@ -53,21 +62,21 @@ function login() {
   //   element.style.background_image = `url(/images/login_7.webp)`
   // })
 
-  return;
-
-  searchAndGetElementById('username', (element) => {
-    submit(element, username);
-    searchAndGetElementById('username_submit', (element) => {
-      element.click()
-      searchAndGetElementById('rswp_password', (element) => {
-        submit(element, password);
-        searchAndGetElementById('rswp_submit', (element) => {
-          element.click();
-          console.log("Finished login attempt.");
-        })
-      })
-    })
-  })
+  // return;
+  //
+  // searchAndGetElementById('username', (element) => {
+  //   submit(element, username);
+  //   searchAndGetElementById('username_submit', (element) => {
+  //     element.click()
+  //     searchAndGetElementById('rswp_password', (element) => {
+  //       submit(element, password);
+  //       searchAndGetElementById('rswp_submit', (element) => {
+  //         element.click();
+  //         console.log("Finished login attempt.");
+  //       })
+  //     })
+  //   })
+  // })
 }
 
 function searchAndGetElementById(element_id, callback) {
