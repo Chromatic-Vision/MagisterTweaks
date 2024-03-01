@@ -1,5 +1,6 @@
 [
     {
+        "id": 2,
         "priority": 1,
         "action": {
             "type": "redirect",
@@ -10,7 +11,7 @@
         "condition": {
             "urlFilter": "https://accounts.magister.net/images/login_1.webp",
             "resourceTypes": [
-                "main_frame"
+                "main_frame", "image"
             ]
         }
     }

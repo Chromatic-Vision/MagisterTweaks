@@ -1,11 +1,7 @@
 //v1.3
 
-const username = "n401696";
-const password = "696969";
-
-chrome.storage.sync.get('mytext', function(data) {
-  console.log(data.mytext);
-});
+const username = "null";
+const password = "null";
 
 function check() {
 
@@ -41,17 +37,28 @@ function login() {
     -moz-background-clip: text;
     -moz-text-fill-color: transparent;
   }
+  h1 {
+    margin: 0 0 0.5rem;
+    padding: 0 0 0.5rem;
+  }
+  h2 {
+    margin: 0.5rem 0 1rem;
+  }
 
   body {
     background-color: #333333;
   }
-
-  .bg1_webp, .bg2_webp, .bg3_webp, .bg4_webp, .bg5_webp, .bg6_webp, .bg7_webp {
-    background-image: url(https://snoworange420.github.io/assets/bob.png); !important
-  }
+  
+  #injected-splash-container {
+    display: block;
+    float: right;
+    width: 50%;
+    left: 50%;
+    position: fixed;
+    top: 0;
+}
 
   `)
-
 
   // searchAndGetElementsByClassName("splash-container", (elements) => {
   //   element = elements[0];
@@ -62,21 +69,33 @@ function login() {
   //   element.style.background_image = `url(/images/login_7.webp)`
   // })
 
-  // return;
-  //
-  // searchAndGetElementById('username', (element) => {
-  //   submit(element, username);
-  //   searchAndGetElementById('username_submit', (element) => {
-  //     element.click()
-  //     searchAndGetElementById('rswp_password', (element) => {
-  //       submit(element, password);
-  //       searchAndGetElementById('rswp_submit', (element) => {
-  //         element.click();
-  //         console.log("Finished login attempt.");
-  //       })
-  //     })
-  //   })
-  // })
+  const bob_url = browser.runtime.getURL('assets/bob.png');
+
+  searchAndGetElementsByClassName('splash-container', (elements) => {
+    let parent;
+    for (let e of elements) {
+      parent = e.parentElement;
+      e.remove();
+    }
+    parent.innerHTML = '<img id="injected-splash-container" src=' + bob_url + '></img>'
+    console.log(elements);
+  })
+
+  return;
+
+  searchAndGetElementById('username', (element) => {
+    submit(element, username);
+    searchAndGetElementById('username_submit', (element) => {
+      element.click()
+      searchAndGetElementById('rswp_password', (element) => {
+        submit(element, password);
+        searchAndGetElementById('rswp_submit', (element) => {
+          element.click();
+          console.log("Finished login attempt.");
+        })
+      })
+    })
+  })
 }
 
 function searchAndGetElementById(element_id, callback) {
