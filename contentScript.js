@@ -1,5 +1,9 @@
 //v1.3
 
+if (typeof browser === "undefined") {
+  var browser = chrome;
+}
+
 const username = "null";
 const password = "null";
 
@@ -12,7 +16,6 @@ function check() {
   setTimeout(function() {
     if (document.readyState === "complete") {
       login();
-      return;
     } else {
       check();
     }
@@ -37,10 +40,12 @@ function login() {
     -moz-background-clip: text;
     -moz-text-fill-color: transparent;
   }
+  
   h1 {
     margin: 0 0 0.5rem;
     padding: 0 0 0.5rem;
   }
+  
   h2 {
     margin: 0.5rem 0 1rem;
   }
