@@ -11,6 +11,15 @@ const password = null;
 
 function inject() {
 
+  dark_bg = "#333333";
+  lighter_bg = "#252525";
+
+  primary_color = "#547a11";
+  secondary_color = "#65960f";
+  tertiair_color = "#79b314";
+
+  light_font_color = "#d6caca";
+
   injectStyle(`
   
   h1 {
@@ -36,6 +45,35 @@ function inject() {
     
   }
   
+  .dna-btn-primary {
+    background: ${primary_color};
+  }
+  
+  .dna-btn-primary:hover {
+    background: ${secondary_color};
+  }
+  
+  .dna-input-group, .dna-text-input {
+    background: ${lighter_bg};
+    color: #ffffff;
+  }
+  
+  .dna-input-group:hover, .dna-text-input:hover, .dna-input-group-focused, .dna-input-group.cdk-focused, .dna-text-input:focus {
+    border-color: ${secondary_color};
+  }
+  
+  input:-internal-autofill-selected {
+    background-color: ${lighter_bg} !important;
+  }
+  
+  input:-webkit-autofill {
+    box-shadow: 0 0 0 1000px ${lighter_bg} inset;
+  }
+  
+  .dna-btn-icon-primary {
+    color: ${secondary_color};
+  }
+  
   #injected-splash-container {
     display: block;
     float: right;
@@ -46,32 +84,93 @@ function inject() {
   }
   
   body {
-    background-color: #252525;
+    background-color: ${lighter_bg};
     
-    --dna-text-color-light: #88ff88;
-    --dna-primary: #d98a30;
-    --dna-secondary: #48bf3d;
+    --dna-text-color-light: #ffffff;
     --dna-primary-text: var(--dna-text-color-light);
+    
+    --dna-primary-hue: 82;
+    --dna-primary-sat: 67%;
+    --dna-primary-lum: 27%;
+    --dna-primary: ${primary_color};
+    --dna-secondary: #b58cb8;
   }
   
   :root {
-    --chrome-background: #333333;
-    --primary-background: #d98a30;
-    --secondary-background: #c47214;
-    --background-1: #d98a30;
-    
+    --chrome-background: ${dark_bg} !important;
+    --primary-background: ${primary_color};
+    --secondary-background: ${secondary_color};
+    --background-1: ${primary_color};
   }
    
   .block h3 {
-    color: #33662e;
+    color: #c75536;
   }
    
   .menu-footer {
-    background: #d98a30;
+    background: ${primary_color};
   }
   
-  .block .content {
-    background-color: #333333;
+  form .radio input[type=radio]~label, fieldset .radio input[type=radio]~label, input[type=checkbox]+label span, .block .content form, .k-dropdown .k-dropdown-wrap.k-state-default, dl.list-dl, .block, .form, div.content, .widget li, td, dt, dd, .k-input, input.k-textbox, textarea.k-textbox, input.k-textbox:hover, textarea.k-textbox:hover, .k-textbox>input, .k-multiselect-wrap, .endlink {
+    background-color: ${lighter_bg} !important;
+  }
+  
+  #bronnen-container .bronnen-quota-label, .column-container h3, .first-column, .rest-column, div.loading-overlay, th, h4.ng-binding, .k-scheduler-dayview .k-scheduler-header .k-scheduler-table th, .k-scheduler-weekview .k-scheduler-header .k-scheduler-table th, .k-scheduler-workWeekview .k-scheduler-header .k-scheduler-table th {
+    background: ${lighter_bg} !important;
+  }
+  
+  span, th, a, td, .k-scheduler .k-event {
+    color: ${light_font_color} !important;
+  }
+  
+  form .radio input[type=radio]:checked~label:before, fieldset .radio input[type=radio]:checked~label:before, .head-bar, input[type=checkbox]:checked+label span:after, .widget .agenda-list li.alert span.time:after, .widget .agenda-list li.alert span.time:before {
+    color: ${secondary_color} !important;
+  }
+  
+  .alert {
+    border-left: 4px solid ${secondary_color} !important;
+    background-color: ${lighter_bg} !important;
+  }
+  
+  a, dt, dl, dt, dd, .ng-binding, li, form label, .block .content p, strong {
+    color: ${light_font_color} !important;
+  }
+  
+  #vandaag-container .grade-widget ul, .bericht-item, div.bericht-item.ng-star-inserted {
+    background-color: ${lighter_bg};
+    border-bottom: 1px solid ${lighter_bg};
+  }
+  
+  table.table-grid-layout td {
+    color: ${light_font_color};
+  }
+  
+  div.header {
+    color: ${lighter_bg};
+  }
+  
+  .alert span.nrblock, span.nrblock, #cijfers-leerling .last-grade, .cijfers-k-grid.k-grid .grade.gemiddeldecolumn {
+    background-color: ${secondary_color} !important;
+  }
+  
+  .alert a:hover, .agenda-lesdashboard aside .agenda-list li a.current {
+    background-color: ${tertiair_color} !important;
+  }
+  
+  aside .tabs li.active {
+    border-bottom: 2px solid ${secondary_color};
+  }
+  
+  .k-scheduler .k-event {
+    background: ${lighter_bg} 0 -257px none repeat-x;
+  }
+  
+  .cijfers-k-grid.k-grid .grade.empty {
+    background: #5b5b5b !important;
+  }
+  
+  .cijfers-k-grid.k-grid .k-selectable .k-state-selected .grade {
+    box-shadow: inset 0 0 0 1px ${secondary_color} !important;
   }
   
   `)
@@ -86,6 +185,18 @@ function inject() {
     }
     parent.innerHTML = '<img id="injected-splash-container" src=' + bob_url + '></img>'
   })
+
+  const loading_gif = browser.runtime.getURL('assets/loading.gif');
+
+  searchAndGetElementsByClassName('loading-animation', (elements) => {
+    let parent;
+    for (let e of elements) {
+      parent = e.parentElement;
+      e.remove();
+    }
+    parent.innerHTML = '<img id="injected-loading-animation" src=' + loading_gif + '></img>'
+  })
+
 }
 
 function check() {
