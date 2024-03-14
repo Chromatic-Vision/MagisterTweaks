@@ -111,7 +111,7 @@ function inject() {
     background: ${primary_color};
   }
   
-  form .radio input[type=radio]~label, fieldset .radio input[type=radio]~label, input[type=checkbox]+label span, .block .content form, .k-dropdown .k-dropdown-wrap.k-state-default, dl.list-dl, .block, .form, div.content, .widget li, td, dt, dd, .k-input, input.k-textbox, textarea.k-textbox, input.k-textbox:hover, textarea.k-textbox:hover, .k-textbox>input, .k-multiselect-wrap, .endlink {
+  .dialog .title, .dialog .content-pane, form .radio input[type=radio]~label, fieldset .radio input[type=radio]~label, input[type=checkbox]+label span, .block .content form, .k-dropdown .k-dropdown-wrap.k-state-default, dl.list-dl, .block, .form, div.content, .widget li, td, dt, dd, .k-input, input.k-textbox, textarea.k-textbox, input.k-textbox:hover, textarea.k-textbox:hover, .k-textbox>input, .k-multiselect-wrap, .endlink {
     background-color: ${lighter_bg} !important;
   }
   
@@ -123,7 +123,7 @@ function inject() {
     color: ${light_font_color} !important;
   }
   
-  form .radio input[type=radio]:checked~label:before, fieldset .radio input[type=radio]:checked~label:before, .head-bar, input[type=checkbox]:checked+label span:after, .widget .agenda-list li.alert span.time:after, .widget .agenda-list li.alert span.time:before {
+  table.table-grid-layout>tbody>tr.selected::after, .sm-grid .k-state-selected .more:after, form .radio input[type=radio]:checked~label:before, fieldset .radio input[type=radio]:checked~label:before, .head-bar, input[type=checkbox]:checked+label span:after, .widget .agenda-list li.alert span.time:after, .widget .agenda-list li.alert span.time:before {
     color: ${secondary_color} !important;
   }
   
@@ -132,7 +132,7 @@ function inject() {
     background-color: ${lighter_bg} !important;
   }
   
-  a, dt, dl, dt, dd, .ng-binding, li, form label, .block .content p, strong {
+  a, dt, dl, dt, dd, .ng-binding, li, form label, .block .content p, strong, .dialog .content p {
     color: ${light_font_color} !important;
   }
   
@@ -171,6 +171,24 @@ function inject() {
   
   .cijfers-k-grid.k-grid .k-selectable .k-state-selected .grade {
     box-shadow: inset 0 0 0 1px ${secondary_color} !important;
+  }
+  
+  .primary-button {
+    background: ${primary_color};
+    border: 1px solid ${primary_color};
+  }
+  
+  .primary-button:hover, .collapsed-menu .popup-menu ul li a:hover {
+    background: ${secondary_color};
+  }
+  
+  .collapsed-menu .popup-menu {
+    background: ${lighter_bg};
+    border: 1px solid ${dark_bg};
+  }
+  
+  .collapsed-menu .popup-menu::after {
+    border-right: 6px solid ${dark_bg};
   }
   
   `)
