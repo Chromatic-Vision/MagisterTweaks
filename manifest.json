@@ -3,7 +3,9 @@
   "name": "MagisterTweaks",
   "version": "0.0.2",
   "description": "Useful tweaks for *.magister.net",
-  "permissions": ["activeTab", "storage", "declarativeNetRequest"],
+  "permissions": ["activeTab", "storage", "declarativeNetRequest",
+    "declarativeNetRequestFeedback",
+    "declarativeNetRequestWithHostAccess"],
   "content_scripts": [
     {
       "matches": ["*://*.magister.net/*"],
@@ -19,12 +21,15 @@
     }
   },
   "declarative_net_request": {
-    "rule_resources": [{
-      "id": "ruleset_1",
-      "enabled": true,
-      "path": "rule.json"
-    }]
+    "rule_resources": [
+      {
+        "id": "ruleset_1",
+        "enabled": true,
+        "path": "redirect.json"
+      }
+    ]
   },
+  "host_permissions": ["https://*.magister.net/"],
   "web_accessible_resources": [
     {
       "resources": ["assets/*.png", "assets/*.gif"],

@@ -119,7 +119,7 @@ function inject() {
     background: ${lighter_bg} !important;
   }
   
-  span, th, a, td, .k-scheduler .k-event {
+  span, th, a, td, .k-scheduler .k-event, fieldset label {
     color: ${light_font_color} !important;
   }
   
@@ -182,18 +182,18 @@ function inject() {
     background: ${secondary_color};
   }
   
-  .collapsed-menu .popup-menu {
+  .collapsed-menu .popup-menu, .appbar .menu-button>a:hover>span {
     background: ${lighter_bg};
     border: 1px solid ${dark_bg};
   }
   
-  .collapsed-menu .popup-menu::after {
+  .collapsed-menu .popup-menu::after, .appbar .menu-button>a:hover>span::after, .collapsed-menu li:hover span::after {
     border-right: 6px solid ${dark_bg};
   }
   
   `)
 
-  const bob_url = browser.runtime.getURL('assets/bob.png');
+  /*const bob_url = browser.runtime.getURL('assets/bob.png');
 
   searchAndGetElementsByClassName('splash-container', (elements) => {
     let parent;
@@ -213,7 +213,8 @@ function inject() {
       e.remove();
     }
     parent.innerHTML = '<img id="injected-loading-animation" src=' + loading_gif + '></img>'
-  })
+  })*/
+
 
 }
 

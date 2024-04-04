@@ -1,0 +1,28 @@
+[
+  {
+    "id": 1,
+    "priority": 1,
+    "action": {
+      "type": "redirect",
+      "redirect": {
+        "url": "https://snoworange420.github.io/assets/bob.png"
+      }
+    },
+    "condition": {
+      "urlFilter": "https://novum.magister.net/assets/error-page-illustration.svg"
+    }
+  },
+  {
+    "id": 2,
+    "priority": 1,
+    "action": {
+      "type": "redirect",
+      "redirect": {
+        "url": "https://snoworange420.github.io/assets/bob.png"
+      }
+    },
+    "condition": {
+      "urlFilter": "https://accounts.magister.net/images/login_*.webp"
+    }
+  }
+]
