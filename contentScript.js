@@ -123,7 +123,7 @@ function inject() {
     color: ${light_font_color} !important;
   }
   
-  table.table-grid-layout>tbody>tr.selected::after, .sm-grid .k-state-selected .more:after, form .radio input[type=radio]:checked~label:before, fieldset .radio input[type=radio]:checked~label:before, .head-bar, input[type=checkbox]:checked+label span:after, .widget .agenda-list li.alert span.time:after, .widget .agenda-list li.alert span.time:before {
+  .sources li a:hover:after, table.table-grid-layout>tbody>tr.selected::after, .sm-grid .k-state-selected .more:after, form .radio input[type=radio]:checked~label:before, fieldset .radio input[type=radio]:checked~label:before, .head-bar, input[type=checkbox]:checked+label span:after, .widget .agenda-list li.alert span.time:after, .widget .agenda-list li.alert span.time:before {
     color: ${secondary_color} !important;
   }
   
@@ -149,11 +149,11 @@ function inject() {
     color: ${lighter_bg};
   }
   
-  .alert span.nrblock, span.nrblock, #cijfers-leerling .last-grade, .cijfers-k-grid.k-grid .grade.gemiddeldecolumn {
+  .alert span.nrblock, span.nrblock, #cijfers-leerling .last-grade, .cijfers-k-grid.k-grid .grade.gemiddeldecolumn, .k-list-container .k-item.k-state-focused.k-state-selected {
     background-color: ${secondary_color} !important;
   }
   
-  .alert a:hover, .agenda-lesdashboard aside .agenda-list li a.current {
+  .sources li.selected>a,.alert a:hover, .agenda-lesdashboard aside .agenda-list li a.current {
     background-color: ${tertiair_color} !important;
   }
   
@@ -163,6 +163,14 @@ function inject() {
   
   .k-scheduler .k-event {
     background: ${lighter_bg} 0 -257px none repeat-x;
+  }
+  
+  .k-calendar .k-header {
+    background-color: ${lighter_bg};
+  }
+  
+  .k-calendar .k-header .k-state-hover {
+    background: ${dark_bg} !important;
   }
   
   .cijfers-k-grid.k-grid .grade.empty {
@@ -184,11 +192,88 @@ function inject() {
   
   .collapsed-menu .popup-menu, .appbar .menu-button>a:hover>span {
     background: ${lighter_bg};
-    border: 1px solid ${dark_bg};
+    border: 1px solid ${dark_bg} !important;
   }
   
-  .collapsed-menu .popup-menu::after, .appbar .menu-button>a:hover>span::after, .collapsed-menu li:hover span::after {
+  html body .k-popup.k-list-container .k-item {
+    background: ${lighter_bg};
+  }
+  
+  .collapsed-menu .popup-menu::after, .appbar .menu-button>a:hover>span::after, .collapsed-menu li:hover span::after, .appbar .popup-menu::after {
     border-right: 6px solid ${dark_bg};
+  }
+  
+  .column-container li.selected, .column-container li.checked, .k-calendar td.range-select {
+    border-top: 1px solid ${tertiair_color} !important;
+    border-bottom: 1px solid ${tertiair_color} !important;
+    background-color: ${secondary_color} !important;
+  }
+  
+  .k-calendar td.range-select.first, .k-calendar td.range-select:first-child {
+    border-left: 1px solid ${primary_color} !important;
+  }
+  
+  .k-calendar td.range-select.last, .k-calendar td.range-select:last-child {
+    border-right: 1px solid ${primary_color} !important;
+  }
+  
+  .k-calendar .k-content tbody td.k-other-month.k-state-hover, .k-calendar .k-content tbody td.k-state-focused, .k-calendar .k-content tbody td.k-state-hover, .k-calendar .k-content tbody td.k-state-selected {
+    background: ${secondary_color} !important;
+    border-color: ${tertiair_color} !important;
+    box-shadow: inset 0 0 0 1px ${secondary_color} !important;
+  }
+  
+  table.table-grid-layout tr:hover {
+    box-shadow: 0 0 0 1px ${secondary_color} !important;
+  }
+  
+  .k-calendar .k-content tbody td.k-other-month.k-state-hover a, .k-calendar .k-content tbody td.k-state-focused a, .k-calendar .k-content tbody td.k-state-hover a, .k-calendar .k-content tbody td.k-state-selected a {
+    background: ${secondary_color} !important;
+  }
+  
+  table.table-grid-layout>tbody>tr.selected td, table.table-grid-layout>tbody>tr.selected+tr td, .sources li:hover, .sources li:hover.selected+li, .sources li:hover+li {
+    border-top: 1px solid ${tertiair_color} !important;
+  }
+  
+  table.table-grid-layout>tbody>tr.selected {
+    background-color: ${tertiair_color};
+    -moz-box-shadow: 0 0 0 1px ${tertiair_color};
+    -webkit-box-shadow: 0 0 0 1px ${tertiair_color};
+    box-shadow: 0 0 0 1px ${tertiair_color};
+  }
+  
+  .agenda-text-icon.outline {
+    background-color: ${secondary_color};
+    border: 1px solid ${tertiair_color};
+  }
+  
+  div.k-grid-content {
+    background-color: ${dark_bg};
+  }
+  
+  .sources li.selected>a:after {
+    color: ${secondary_color};
+  }
+  
+  .collapsed-menu li:hover span, .collapsed-menu #faux-label, .appbar .popup-menu {
+    background: ${dark_bg} !important;
+    border: 1px solid ${lighter_bg} !important;
+  }
+  
+  .appbar .popup-menu h3 {
+    color: ${primary_color};
+  }
+  
+  .agenda-lesdashboard .lesvak-prev-next .content-auto .list li:hover, .agenda-lesdashboard .lesvak-prev-next .content-auto .list a:hover {
+    background-color: ${lighter_bg};
+  }
+  
+  .agenda-lesdashboard .lesvak-prev-next .content-auto span.icon-up-arrow.prev:hover, .agenda-lesdashboard .lesvak-prev-next .content-auto span.icon-up-arrow.next:hover {
+    background-color: ${tertiair_color};
+  }
+  
+  .appbar .popup-menu ul li a:hover {
+    background: ${secondary_color};
   }
   
   `)
