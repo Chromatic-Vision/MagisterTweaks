@@ -1,7 +1,7 @@
 {
   "manifest_version": 3,
   "name": "MagisterTweaks",
-  "version": "0.1",
+  "version": "0.1.1",
   "description": "Useful tweaks for *.magister.net",
   "permissions": ["activeTab", "storage", "declarativeNetRequest",
     "declarativeNetRequestFeedback",
@@ -13,11 +13,11 @@
     }
   ],
   "action": {
-    "default_popup": "popup.html",
+    "default_popup": "popup/popup.html",
     "default_icon": {
-      "16": "icon.png",
-      "48": "icon.png",
-      "128": "icon.png"
+      "16": "assets/icon.png",
+      "48": "assets/icon.png",
+      "128": "assets/icon.png"
     }
   },
   "declarative_net_request": {

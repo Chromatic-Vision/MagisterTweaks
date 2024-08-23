@@ -368,11 +368,15 @@ function submit(element, value) {
   element.dispatchEvent(event);
 }
 
+ */
+
 function injectStyle(styleString) {
   const style = document.createElement('style');
   style.textContent = styleString;
   document.head.append(style);
 }
+
+/*
 
 if (username == null || password == null) {
   console.error("Username or password not filled in yet! Please go to line 3 and 4 in contentScript.js and configure your username and password.");
