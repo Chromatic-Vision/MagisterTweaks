@@ -1,6 +1,8 @@
-//v1.3
+/*
 
-console.log("bruh")
+  MagisterTweaks by Chromatic Vision (https://github.com/Chromatic-Vision/MagisterTweaks)
+
+ */
 
 if (typeof browser === "undefined") {
   var browser = chrome;
@@ -10,6 +12,8 @@ const username = null;
 const password = null;
 
 function inject() {
+  
+  console.log("Injecting html stylesheet...");
 
   dark_bg = "#333333";
   lighter_bg = "#252525";
@@ -18,9 +22,13 @@ function inject() {
   secondary_color = "#65960f";
   tertiair_color = "#79b314";
 
-  light_font_color = "#d6caca";
+  font_color = "#d6caca";
 
   injectStyle(`
+  
+  .animation-container-loading {
+    background: ${dark_bg} !important;
+  }
   
   h1 {
     padding-bottom: 10px;
@@ -43,6 +51,10 @@ function inject() {
     -moz-background-clip: text;
     -moz-text-fill-color: transparent;
     
+  }
+  
+  p {
+    color: ${font_color} !important;
   }
   
   .dna-btn-primary {
@@ -120,7 +132,7 @@ function inject() {
   }
   
   span, th, a, td, .k-scheduler .k-event, fieldset label {
-    color: ${light_font_color} !important;
+    color: ${font_color} !important;
   }
   
   .sources li a:hover:after, table.table-grid-layout>tbody>tr.selected::after, .sm-grid .k-state-selected .more:after, form .radio input[type=radio]:checked~label:before, fieldset .radio input[type=radio]:checked~label:before, .head-bar, input[type=checkbox]:checked+label span:after, .widget .agenda-list li.alert span.time:after, .widget .agenda-list li.alert span.time:before {
@@ -133,7 +145,7 @@ function inject() {
   }
   
   a, dt, dl, dt, dd, .ng-binding, li, form label, .block .content p, strong, .dialog .content p {
-    color: ${light_font_color} !important;
+    color: ${font_color} !important;
   }
   
   #vandaag-container .grade-widget ul, .bericht-item, div.bericht-item.ng-star-inserted {
@@ -142,7 +154,7 @@ function inject() {
   }
   
   table.table-grid-layout td {
-    color: ${light_font_color};
+    color: ${font_color};
   }
   
   div.header {
@@ -277,31 +289,9 @@ function inject() {
   }
   
   `)
-
-  /*const bob_url = browser.runtime.getURL('assets/bob.png');
-
-  searchAndGetElementsByClassName('splash-container', (elements) => {
-    let parent;
-    for (let e of elements) {
-      parent = e.parentElement;
-      e.remove();
-    }
-    parent.innerHTML = '<img id="injected-splash-container" src=' + bob_url + '></img>'
-  })
-
-  const loading_gif = browser.runtime.getURL('assets/loading.gif');
-
-  searchAndGetElementsByClassName('loading-animation', (elements) => {
-    let parent;
-    for (let e of elements) {
-      parent = e.parentElement;
-      e.remove();
-    }
-    parent.innerHTML = '<img id="injected-loading-animation" src=' + loading_gif + '></img>'
-  })*/
-
-
 }
+
+/*
 
 function check() {
 
@@ -384,10 +374,12 @@ function injectStyle(styleString) {
   document.head.append(style);
 }
 
-// if (username == null || password == null) {
-//   console.error("Username or password not filled in yet! Please go to line 3 and 4 in contentScript.js and configure your username and password.");
-// } else {
-//   check();
-// }
+if (username == null || password == null) {
+  console.error("Username or password not filled in yet! Please go to line 3 and 4 in contentScript.js and configure your username and password.");
+} else {
+  check();
+}
 
-inject()
+ */
+
+inject();

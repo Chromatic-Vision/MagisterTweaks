@@ -1,7 +1,7 @@
 {
   "manifest_version": 3,
   "name": "MagisterTweaks",
-  "version": "0.0.3",
+  "version": "0.1",
   "description": "Useful tweaks for *.magister.net",
   "permissions": ["activeTab", "storage", "declarativeNetRequest",
     "declarativeNetRequestFeedback",
@@ -25,7 +25,7 @@
       {
         "id": "ruleset_1",
         "enabled": true,
-        "path": "redirect.json"
+        "path": "rulesets.json"
       }
     ]
   },

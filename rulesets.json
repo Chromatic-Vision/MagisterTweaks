@@ -1,0 +1,56 @@
+[
+  {
+    "id": 1,
+    "priority": 1,
+    "action": {
+      "type": "modifyHeaders",
+      "responseHeaders": [
+        { "header": "Content-Security-Policy", "operation": "remove" },
+        { "header": "Content-Security-Policy-Report-Only", "operation": "remove" }
+      ]
+    },
+    "condition": {
+      "urlFilter": "*",
+      "resourceTypes": ["main_frame", "sub_frame"]
+    }
+  },
+  {
+    "id": 2,
+    "priority": 1,
+    "action": {
+      "type": "redirect",
+      "redirect": {
+        "url": "https://snoworange420.github.io/assets/bob.png"
+      }
+    },
+    "condition": {
+      "urlFilter": "https://accounts.magister.net/images/login_*.webp"
+    }
+  },
+  {
+    "id": 3,
+    "priority": 1,
+    "action": {
+      "type": "redirect",
+      "redirect": {
+        "url": "https://snoworange420.github.io/assets/bob.png"
+      }
+    },
+    "condition": {
+      "urlFilter": "https://novum.magister.net/assets/error-page-illustration.svg"
+    }
+  },
+  {
+    "id": 4,
+    "priority": 1,
+    "action": {
+      "type": "redirect",
+      "redirect": {
+        "url": "https://snoworange420.github.io/assets/bob.png"
+      }
+    },
+    "condition": {
+      "urlFilter": "https://novum.magister.net/assets/summer-holiday.svg"
+    }
+  }
+]
