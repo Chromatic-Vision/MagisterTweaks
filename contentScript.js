@@ -4,7 +4,7 @@
 
  */
 
-if (typeof browser === "undefined") {
+if (typeof browser === "undefined") { // make sure it works universal (with FireFox, etc.)
   var browser = chrome;
 }
 
@@ -28,6 +28,15 @@ function inject() {
   
   .animation-container-loading {
     background: ${dark_bg} !important;
+  }
+  
+  #injected-splash-container {
+    display: block;
+    float: right;
+    width: 50%;
+    left: 50%;
+    position: fixed;
+    top: 0;
   }
   
   h1 {
@@ -86,15 +95,6 @@ function inject() {
     color: ${secondary_color};
   }
   
-  #injected-splash-container {
-    display: block;
-    float: right;
-    width: 50%;
-    left: 50%;
-    position: fixed;
-    top: 0;
-  }
-  
   body {
     background-color: ${lighter_bg};
     
@@ -135,8 +135,12 @@ function inject() {
     color: ${font_color} !important;
   }
   
-  .sources li a:hover:after, table.table-grid-layout>tbody>tr.selected::after, .sm-grid .k-state-selected .more:after, form .radio input[type=radio]:checked~label:before, fieldset .radio input[type=radio]:checked~label:before, .head-bar, input[type=checkbox]:checked+label span:after, .widget .agenda-list li.alert span.time:after, .widget .agenda-list li.alert span.time:before {
+  table.table-grid-layout>tbody>tr.selected::after, .sm-grid .k-state-selected .more:after, form .radio input[type=radio]:checked~label:before, fieldset .radio input[type=radio]:checked~label:before, .head-bar, input[type=checkbox]:checked+label span:after, .widget .agenda-list li.alert span.time:after, .widget .agenda-list li.alert span.time:before {
     color: ${secondary_color} !important;
+  }
+  
+  .sources li a:hover:after {
+    color: ${tertiair_color} !important;
   }
   
   .alert {
@@ -286,6 +290,47 @@ function inject() {
   
   .appbar .popup-menu ul li a:hover {
     background: ${secondary_color};
+  }
+  
+  #cijfers-container .main div.content-container-cijfers {
+    border: 1px solid ${lighter_bg};
+    background-color: ${dark_bg};
+  }
+  
+  .main div.multi-columns .col:last-child, .main div.multi-columns .col-noprint:last-child, .main div.multi-columns .col, .main div.multi-columns .col-noprint {
+    background-color: ${lighter_bg} !important;
+  }
+  
+  .messages h3, #berichten-detail-container .new-message-block .contact-personen .fancy-select, #cijfers-container aside .widget .cijfer-berekend tr:first-child, #cijfers-container .main .grades-table-overview th, .wysiwyg table.k-editor .k-editor-toolbar .k-button-group a, .block h3+div h3, .assignments-table th, .attachment-bar.editable div, .k-treeview .k-treeview-lines {
+    background: ${lighter_bg} !important;
+  }
+  
+  .k-treeview .k-in.k-state-selected>a, .k-treeview .k-in.k-state-selected.k-state-focused>a, .k-treeview .k-in.k-state-selected .k-state-focused>a {
+    background-color: ${secondary_color} !important;
+  }
+  
+  .k-treeview .k-in.k-state-selected>a .indicator:before, .k-treeview .k-in.k-state-selected>a .indicator:before, .k-treeview .k-plus:hover+.k-in>a .indicator:before, .k-treeview .k-minus:hover+.k-in>a .indicator:before {
+    color: ${tertiair_color} !important;
+  }
+  
+  .k-treeview .k-in.k-state-hover>a, .k-treeview .k-in.k-state-focused>a, .k-treeview .k-in.k-state-selected:hover>a {
+    background-color: ${secondary_color} !important;
+  }
+  
+  .k-calendar {
+    background-color: ${lighter_bg} !important;
+  }
+  
+  .widget .list li.no-data:hover, .widget .list li.no-data a:hover {
+    background-color: ${dark_bg} !important;
+  }
+  
+  #vandaag-container .droppable {
+    background-color: ${lighter_bg} !important;
+  }
+  
+  .k-textbox:focus, .k-autocomplete.k-state-focused, .k-picker-wrap.k-state-focused, .k-numeric-wrap.k-state-focused, .k-dropdown-wrap.k-state-focused, .k-multiselect.k-header.k-state-focused {
+    box-shadow: 0 0 7px 0 ${secondary_color} !important;
   }
   
   `)
