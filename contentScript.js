@@ -333,6 +333,34 @@ function inject() {
     box-shadow: 0 0 7px 0 ${secondary_color} !important;
   }
   
+  .info-toast, toast {
+    background-color: ${lighter_bg} !important;
+  }
+  
+  .info-toast:before {
+    background-color: ${secondary_color} !important;
+  }
+  
+  .info-toast {
+    border-color: ${secondary_color} !important;
+  }
+  
+  mg-toestemmings-antwoorden .fa-info-circle {
+    color: ${secondary_color} !important;
+  }
+  
+  button {
+    background: ${primary_color} !important;
+  }
+  
+  button:hover {
+    background: ${secondary_color} !important;
+  }
+  
+  .input-drop-down-list-item.selected {
+    background-color: ${tertiair_color} !important;
+  }
+  
   `)
 }
 

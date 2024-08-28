@@ -1,22 +1,115 @@
 <!DOCTYPE html>
-<html>
-<script src="popup.js"></script>
+<html lang="en">
 <head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Dropdown Menu</title>
   <style>
     body {
-      width: 300px; /* Adjust width as needed */
-      height: 200px; /* Adjust height as needed */
-      padding: 10px;
+      font-family: Arial, sans-serif;
+    }
+
+    .menu {
+      position: relative;
+      display: inline-block;
+    }
+
+    .menu-item {
+      cursor: pointer;
+      padding: 8px 12px;
+      background-color: #eee;
+      border: 1px solid #ccc;
+      margin: 2px 0;
+    }
+
+    .menu-item:hover {
+      background-color: #ddd;
+    }
+
+    .dropdown {
+      display: none;
+      position: absolute;
+      top: 0;
+      left:             100%;
+      margin-left: 5px;
+      z-index: 1000;
+    }
+
+    .menu-item:hover > .dropdown {
+      display: block;
+    }
+
+    .menu-item .dropdown .menu-item {
+      position: relative;
+      top: 0;
+      left: 0;
+      margin: 0;
+    }
+
+    .input-box {
+      display: none;
+      margin-top: 5px;
+    }
+
+    .menu-item:focus-within .input-box {
+      display: inline-block;
     }
   </style>
 </head>
 <body>
-  <h2>MagisterTweaks</h2>
-  <label>
-    AutoLogin: <input type="checkbox" id="option-autologin" onclick="lol()">
-  </label>
-  <label>
-  KillSplashImages: <input type="checkbox" id="myButton" onclick="lol()">
-  </label>
+<div class="menu">
+  <div class="menu-item">
+    Settings
+    <div class="dropdown">
+      <div class="menu-item">
+        General
+        <div class="dropdown">
+          <div class="menu-item" onclick="toggle('dvd')">
+            Toggle DVD icon
+          </div>
+          <div class="menu-item">
+            Set interval: <span id="interval-value">0ms</span>
+            <input type="text" class="input-box" onblur="adjust('interval', this.value)" placeholder="Enter interval">
+          </div>
+          <div class="menu-item">
+            Custom text:-value">hello</span>
+            <input type="text" class="input-box" onblur="adjust('text', this.value)" placeholder="Enter custom text">
+          </div>
+          <div class="menu-item">
+            Toggle login
+            <div class="dropdown">
+              <div class="menu-item">
+                Username: <span id="username-value">test</span>
+                <input type="text" class="input-box" onblur="adjust('username', this.value)" placeholder="Enter username">
+              </div>
+              <div class="menu-item">
+                Password: <span id="password-value">hi</span>
+                <input type="text" class="input-box" onblur="adjust('password', this.value)" placeholder="Enter password">
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="menu-item">
+        Misc
+        <!-- More dropdowns and menu items can be added here -->
+      </div>
+    </div>
+  </div>
+</   div>
+
+<script>
+  function toggle(feature) {
+    console.log("Toggling " + feature);
+    // Implement toggle logic here
+  }
+
+  function adjust(setting, value) {
+    if (value !== "") {
+      console.log(Setting ${setting} to ${value});
+      document.getElementById(${setting}-value).textContent = value;
+    }
+  }
+</script>
 </body>
 </html>

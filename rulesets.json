@@ -131,4 +131,18 @@
       "urlFilter": "https://novum.magister.net/assets/summer-holiday.svg"
     }
   }
+,
+  {
+    "id": 11,
+    "priority": 1,
+    "action": {
+      "type": "redirect",
+      "redirect": {
+        "url": "https://terukaaz.github.io/images/magisterloginscreendump/bob.png"
+      }
+    },
+    "condition": {
+      "urlFilter": "https://accounts.magister.net/content/splash.jpg"
+    }
+  }
 ]
