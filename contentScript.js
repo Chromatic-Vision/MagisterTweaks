@@ -24,6 +24,9 @@ function inject() {
 
   font_color = "#d6caca";
 
+  bad_grade = "#ee3b1c";
+  good_grade = "#47ad47";
+
   injectStyle(`
   
   .animation-container-loading {
@@ -190,11 +193,11 @@ function inject() {
   }
   
   .cijfers-k-grid.k-grid .grade.empty {
-    background: #5b5b5b !important;
+    background: ${dark_bg} !important;
   }
   
   .cijfers-k-grid.k-grid .k-selectable .k-state-selected .grade {
-    box-shadow: inset 0 0 0 1px ${secondary_color} !important;
+    box-shadow: inset 0 0 0 1px #ffffff !important;
   }
   
   .primary-button {
@@ -360,6 +363,36 @@ function inject() {
   .input-drop-down-list-item.selected {
     background-color: ${tertiair_color} !important;
   }
+  
+  .k-scheduler .k-event.k-state-selected, .k-scheduler .k-event:hover {
+    background-color: ${secondary_color} !important;
+    border: 1px solid ${tertiair_color} !important;
+  }
+  
+  .k-scheduler-dayview .k-event.k-state-selected::after, .k-scheduler-weekview .k-event.k-state-selected::after, .k-scheduler-workWeekview .k-event.k-state-selected::after {
+    color: ${tertiair_color} !important;
+  }
+  
+  /* Grade patching smh */
+  
+  .cijfers-k-grid.k-grid .grade.gemiddeldecolumn[title="0"] { background-color: ${bad_grade} !important; }
+  .cijfers-k-grid.k-grid .grade.gemiddeldecolumn[title="1"] { background-color: ${bad_grade} !important; }
+  .cijfers-k-grid.k-grid .grade.gemiddeldecolumn[title="2"] { background-color: ${bad_grade} !important; }
+  .cijfers-k-grid.k-grid .grade.gemiddeldecolumn[title="3"] { background-color: ${bad_grade} !important; }
+  .cijfers-k-grid.k-grid .grade.gemiddeldecolumn[title="4"] { background-color: ${bad_grade} !important; }
+  .cijfers-k-grid.k-grid .grade.gemiddeldecolumn[title="5"] { background-color: ${bad_grade} !important; }
+  .cijfers-k-grid.k-grid .grade.gemiddeldecolumn[title="O"] { background-color: ${bad_grade} !important; }
+  
+  .cijfers-k-grid.k-grid .grade.gemiddeldecolumn[title="V"] { background-color: ${good_grade} !important; }
+  .cijfers-k-grid.k-grid .grade.gemiddeldecolumn[title="6"] { background-color: ${good_grade} !important; }
+  .cijfers-k-grid.k-grid .grade.gemiddeldecolumn[title="7"] { background-color: ${good_grade} !important; }
+  .cijfers-k-grid.k-grid .grade.gemiddeldecolumn[title="8"] { background-color: ${good_grade} !important; }
+  .cijfers-k-grid.k-grid .grade.gemiddeldecolumn[title="9"] { background-color: ${good_grade} !important; }
+  .cijfers-k-grid.k-grid .grade.gemiddeldecolumn[title="10"] { background-color: ${good_grade} !important; }
+  .cijfers-k-grid.k-grid .grade.gemiddeldecolumn[title="G"] { background-color: ${good_grade} !important; }
+  
+  }
+      
   
   `)
 }
