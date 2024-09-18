@@ -405,7 +405,24 @@ function inject() {
   .cijfers-k-grid.k-grid .grade.gemiddeldecolumn[title="G"] { background-color: ${good_grade} !important; }
   
   }
-      
+  
+  ul li .alert:hover {
+    background-color: ${tertiair_color} !important;
+  }
+  
+  .widget .list li: hover {
+    border-top: ${dark_bg} !important;
+  }
+  
+  .alert:hover {
+    background-color: ${tertiair_color} !important;
+  }
+   
+   /*
+  img[data-ng-src="assets/images/cijfers.svg"] {
+    filter: brightness(${font_color});
+  }
+  */   
   
   `)
 }
